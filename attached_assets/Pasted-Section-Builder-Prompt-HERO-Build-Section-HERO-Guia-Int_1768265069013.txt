@@ -1,0 +1,252 @@
+Section Builder Prompt — HERO
+# Build Section: HERO — Guia Inteligente de São Luís
+
+Build a hero section for "Guia Inteligente de São Luís" — an AI-powered WhatsApp concierge that recommends the best places in São Luís, Brazil. Follow the reference design style closely.
+
+## LAYOUT STRUCTURE
+┌─────────────────────────────────────────────────────────────────┐
+│ NAVBAR                                                          │
+│ [Logo]                              [Nav Links]  [CTA Button]   │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│                    DECORATIVE BACKGROUND                        │
+│              (soft gradient with floating elements)             │
+│                                                                 │
+│                      HEADLINE (centered)                        │
+│                     SUBHEADLINE (centered)                      │
+│                                                                 │
+│                      [ CTA BUTTON ]                             │
+│                                                                 │
+│              ┌─────────────────────────┐                        │
+│              │                         │                        │
+│              │   WHATSAPP MOCKUP       │                        │
+│              │   (phone with chat)     │                        │
+│              │                         │                        │
+│              └─────────────────────────┘                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+## NAVIGATION BAR
+
+Position: Fixed top, transparent background that becomes white on scroll
+Height: 64px
+Container: max-width 1200px, centered
+
+Left side:
+- Logo: "Guia Slz" in bold sans-serif, or a simple logo mark
+- Optional: Small tagline "by @roleslz" in gray-400
+
+Right side (desktop):
+- Nav links: "Como funciona" | "Preços" | "FAQ"
+- Font: 14px, font-medium, gray-700
+- Hover: primary blue color
+- CTA Button: "Quero meu acesso!" 
+  - Background: primary blue (#2563EB)
+  - Text: white, font-semibold
+  - Padding: 12px 24px
+  - Border-radius: radius-full (pill shape)
+  - Hover: darker blue + subtle lift shadow
+
+Mobile: Hamburger menu icon on right
+
+## BACKGROUND & DECORATIVE ELEMENTS
+
+Background: Soft gradient from light blue (#E0F2FE) at top to white at bottom
+
+Decorative floating elements (CSS/SVG, subtle parallax on scroll):
+- Soft cloud shapes in white/light blue (top area)
+- Abstract wavy pattern in pastel blue (like the Craft reference)
+- Optional: Small floating icons related to São Luís (palm tree, beach umbrella, food icons) in pastel colors
+- Keep it light and airy — don't overcrowd
+
+## HERO CONTENT
+
+Container: max-width 800px, centered, padding-top: 120px
+
+### Headline
+Seu concierge pessoal de São Luís, direto no seu WhatsApp
+- Font: Playfair Display (serif), font-bold
+- Size: clamp(2.5rem, 5vw, 3.5rem) — text-5xl
+- Color: gray-900
+- Line-height: leading-tight (1.2)
+- Text-align: center
+- Letter-spacing: tracking-tight
+- Max-width: 700px
+- Margin-bottom: 24px
+
+### Subheadline
+Pergunte onde ir, o que fazer, onde comer. Receba recomendações na hora e ainda ganhe descontos exclusivos nos melhores lugares da ilha.
+- Font: Inter (sans-serif), font-normal
+- Size: text-lg (18px) on mobile, text-xl (20px) on desktop
+- Color: gray-600
+- Line-height: leading-relaxed (1.625)
+- Text-align: center
+- Max-width: 600px
+- Margin-bottom: 32px
+
+### CTA Button
+Quero meu acesso!
+- Background: primary blue (#2563EB)
+- Text: white, font-semibold, text-base
+- Padding: 16px 32px
+- Border-radius: radius-full (pill shape)
+- Box-shadow: shadow-lg
+- Hover effect: 
+  - Background: primary-hover (#1D4ED8)
+  - Transform: translateY(-2px)
+  - Box-shadow: shadow-xl
+- Transition: transition-base (200ms ease)
+- Optional: Small WhatsApp icon before text (white, 20px)
+
+## WHATSAPP MOCKUP (Hero Image)
+
+Position: Below CTA, centered
+Margin-top: 48px
+Max-width: 380px (phone width)
+
+### Phone Frame
+- Create a realistic iPhone-style frame
+- Background: white
+- Border-radius: 40px (rounded phone corners)
+- Border: 8px solid gray-800 (phone bezel)
+- Box-shadow: shadow-2xl + subtle colored shadow (rgba(37, 99, 235, 0.15))
+- Slight rotation: rotate(-2deg) for dynamic feel
+
+### WhatsApp Chat UI Inside Phone
+Build this as an actual React component, NOT an image:
+
+**Chat Header:**
+- Background: #075E54 (WhatsApp green)
+- Left: Back arrow + Profile picture (circle, use a friendly avatar or Guia Slz logo)
+- Center: "Guia Slz" in white, bold
+- Right: Video call, phone, menu icons (white)
+
+**Chat Body:**
+- Background: #ECE5DD (WhatsApp chat background)
+- Padding: 12px
+
+**User Message Bubble (right-aligned):**
+Me indica um lugar pra jantar no Renascença?
+- Background: #DCF8C6 (WhatsApp green bubble)
+- Border-radius: 8px, with tail on right
+- Font: 14px, gray-800
+- Padding: 8px 12px
+- Time stamp: "19:32" in gray-500, small text, bottom right
+
+**Bot Response Bubble (left-aligned):**
+Claro! 🍽️ Aqui vão 3 opções top no Renascença:
+
+Cabana do Sol - Frutos do mar, ambiente familiar
+⭐ 4.8 · 💰 $$ · 🎫 10% OFF
+Churrascaria Fogo de Chão - Rodízio completo
+⭐ 4.6 · 💰 $$$ · 🎫 15% OFF
+Toca do Caranguejo - Caranguejo e petiscos
+⭐ 4.7 · 💰 $$ · 🎫 Bebida grátis
+
+Quer mais detalhes de algum? 😊
+- Background: white
+- Border-radius: 8px, with tail on left
+- Font: 14px, gray-800
+- Padding: 10px 14px
+- Format restaurant names in bold
+- Use emojis as shown
+- Highlight discount badges with a subtle colored background (pastel green or yellow)
+- Time stamp: "19:32" in gray-500
+
+**Chat Input (bottom):**
+- Background: white
+- Left: Emoji icon, attachment icon
+- Center: Input placeholder "Mensagem"
+- Right: Microphone icon
+- All icons in gray-500
+
+### Floating Decorative Elements Around Phone
+- Small pastel-colored shapes floating around the mockup
+- Discount tag icon (floating, tilted, in yellow/gold)
+- Location pin icon (floating, in coral/red)
+- Star rating icon (floating, in yellow)
+- These add visual interest and reinforce the product benefits
+
+## RESPONSIVE BEHAVIOR
+
+**Desktop (1024px+):**
+- Full layout as described
+- Phone mockup at full size
+
+**Tablet (768px - 1023px):**
+- Reduce headline to text-4xl
+- Phone mockup scales down proportionally
+
+**Mobile (< 768px):**
+- Navbar: Logo left, hamburger menu right
+- Headline: text-3xl
+- Subheadline: text-base
+- CTA: Full width with margin on sides
+- Phone mockup: max-width 300px, centered
+- Reduce decorative elements
+
+## ANIMATIONS
+
+**On Page Load (staggered):**
+1. Navbar fades in (0ms delay)
+2. Headline fades up from bottom (200ms delay)
+3. Subheadline fades up (400ms delay)
+4. CTA button fades up with slight scale (600ms delay)
+5. Phone mockup fades up and floats in (800ms delay)
+
+**Animation Properties:**
+- Duration: 600ms
+- Easing: cubic-bezier(0.16, 1, 0.3, 1) — smooth deceleration
+- Fade: opacity 0 → 1
+- Slide up: translateY(30px) → translateY(0)
+
+**Continuous Animations:**
+- Phone mockup: Subtle floating animation (translateY oscillation, 3s duration, infinite)
+- Decorative elements: Slow parallax drift on mouse move (optional)
+
+**Button Hover:**
+- Scale: 1.02
+- Shadow increase
+- Color darken
+- Transition: 200ms ease
+
+## TECHNICAL REQUIREMENTS
+
+- Use React functional components with hooks
+- Use Tailwind CSS for styling (core utility classes only)
+- WhatsApp mockup must be built as real DOM elements (not an image)
+- Ensure all text is selectable and accessible
+- Add appropriate aria-labels for accessibility
+- Lazy load any images
+- Optimize for Core Web Vitals (no layout shift)
+
+## COLOR REFERENCE (from global.css)
+
+- Primary: #2563EB
+- Primary Hover: #1D4ED8
+- Gray-900: #111827
+- Gray-600: #4B5563
+- Gray-400: #9CA3AF
+- Pastel Blue: #BFDBFE
+- Background gradient: #E0F2FE → #FFFFFF
+- WhatsApp Green: #075E54
+- WhatsApp Chat BG: #ECE5DD
+- WhatsApp User Bubble: #DCF8C6
+
+Copie o prompt acima e cole no Replit Design Mode. Ele vai construir a seção Hero completa com o mockup do WhatsApp e todas as animações.
+
+Seções completas: Hero ✅
+Próximas seções:
+
+Seção 2: Prova Social
+Seção 3: Produto vs. Alternativas
+Seção 4: Features & Valor
+Seção 5: Como Funciona
+Seção 6: Exemplos de Perguntas
+Seção 7: Depoimentos
+Seção 8: Pra Quem É
+Seção 9: Investimento
+Seção 10: Risco Zero
+Seção 11: Sobre o Criador
+Seção 12: FAQ
+Seção 13: Footer
