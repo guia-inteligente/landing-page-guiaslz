@@ -1,0 +1,1469 @@
+# MEGA-PROMPT: Landing Page Completa — Guia Slz
+
+Build a complete landing page for "Guia Slz" — an AI-powered WhatsApp concierge that recommends the best places in São Luís, Brazil. The page should be modern, friendly, and conversion-focused.
+
+---
+
+## PART 1: DESIGN SYSTEM & GLOBAL TOKENS
+
+Configure the global.css file with these design tokens:
+
+### COLOR PALETTE
+
+#### Brand Colors (Primary)
+```css
+--color-primary: #B91C1C;           /* Deep red from logo */
+--color-primary-hover: #991B1B;     /* Darker red for hover */
+--color-primary-light: #FEE2E2;     /* Light red for backgrounds */
+--color-primary-50: #FEF2F2;        /* Very light red */
+```
+
+#### Brand Colors (Secondary)
+```css
+--color-cream: #FDF6E3;             /* Cream from logo */
+--color-cream-dark: #F5F0DC;        /* Darker cream */
+--color-cream-light: #FFFDF7;       /* Lighter cream */
+```
+
+#### Neutral Colors
+```css
+--color-white: #FFFFFF;
+--color-off-white: #FAFAFA;
+--color-gray-50: #F9FAFB;
+--color-gray-100: #F3F4F6;
+--color-gray-200: #E5E7EB;
+--color-gray-300: #D1D5DB;
+--color-gray-400: #9CA3AF;
+--color-gray-500: #6B7280;
+--color-gray-600: #4B5563;
+--color-gray-700: #374151;
+--color-gray-800: #1F2937;
+--color-gray-900: #111827;
+```
+
+#### Dark Section Colors
+```css
+--color-dark-bg: #0F0F0F;           /* Near black for dark sections */
+--color-dark-bg-alt: #1A1A1A;       /* Slightly lighter */
+```
+
+#### Accent Colors
+```css
+--color-whatsapp: #25D366;          /* WhatsApp green */
+--color-whatsapp-dark: #128C7E;     /* WhatsApp dark green */
+--color-whatsapp-bg: #ECE5DD;       /* WhatsApp chat background */
+--color-whatsapp-bubble: #DCF8C6;   /* WhatsApp user bubble */
+--color-success: #10B981;
+--color-warning: #F59E0B;
+--color-discount: #FEF3C7;          /* Yellow for discount badges */
+```
+
+### TYPOGRAPHY
+
+```css
+/* Font Families */
+--font-heading: 'Playfair Display', Georgia, serif;
+--font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+/* Font Sizes */
+--text-xs: 0.75rem;
+--text-sm: 0.875rem;
+--text-base: 1rem;
+--text-lg: 1.125rem;
+--text-xl: 1.25rem;
+--text-2xl: 1.5rem;
+--text-3xl: 1.875rem;
+--text-4xl: clamp(2rem, 4vw, 2.5rem);
+--text-5xl: clamp(2.5rem, 5vw, 3.5rem);
+--text-6xl: clamp(3rem, 6vw, 4.5rem);
+
+/* Font Weights */
+--font-normal: 400;
+--font-medium: 500;
+--font-semibold: 600;
+--font-bold: 700;
+
+/* Line Heights */
+--leading-tight: 1.2;
+--leading-snug: 1.375;
+--leading-normal: 1.5;
+--leading-relaxed: 1.625;
+```
+
+### SPACING
+
+```css
+--space-1: 0.25rem;
+--space-2: 0.5rem;
+--space-3: 0.75rem;
+--space-4: 1rem;
+--space-6: 1.5rem;
+--space-8: 2rem;
+--space-10: 2.5rem;
+--space-12: 3rem;
+--space-16: 4rem;
+--space-20: 5rem;
+--space-24: 6rem;
+
+--section-padding-y: clamp(4rem, 8vw, 7rem);
+--container-max-width: 1200px;
+--container-padding: 1.5rem;
+```
+
+### BORDERS & SHADOWS
+
+```css
+/* Border Radius */
+--radius-sm: 0.375rem;
+--radius-md: 0.5rem;
+--radius-lg: 0.75rem;
+--radius-xl: 1rem;
+--radius-2xl: 1.5rem;
+--radius-3xl: 2rem;
+--radius-full: 9999px;
+
+/* Shadows */
+--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+--shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+--shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+```
+
+### TRANSITIONS
+
+```css
+--transition-fast: 150ms ease;
+--transition-base: 200ms ease;
+--transition-slow: 300ms ease;
+--transition-bounce: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+```
+
+---
+
+## PART 2: PAGE SECTIONS
+
+Build each section in order, using the exact copy provided.
+
+---
+
+## SECTION 1: NAVIGATION BAR
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│ [LOGO]                           [Links]        [CTA Button]    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Specifications:
+- Position: Fixed top, z-index 50
+- Background: Transparent, becomes white with shadow on scroll
+- Height: 72px
+- Container: max-width 1200px, centered, padding 0 24px
+
+### Left Side:
+- Logo: Use the Guia Slz logo image (speech bubble with "GUIA SLZ" text)
+- Logo height: 40px
+- Alt text: "Guia Slz - Seu concierge de São Luís"
+
+### Right Side (Desktop):
+- Nav links: "Como funciona" | "Benefícios" | "Preços" | "FAQ"
+- Font: text-sm, font-medium, gray-700
+- Hover: color primary red
+- Gap between links: 32px
+
+### CTA Button:
+```
+Quero meu acesso!
+```
+- Background: primary red (#B91C1C)
+- Text: white, font-semibold, text-sm
+- Padding: 12px 24px
+- Border-radius: radius-full
+- Hover: darker red + translateY(-1px)
+- Optional: WhatsApp icon (white, 16px) before text
+
+### Mobile (< 768px):
+- Logo left, hamburger menu icon right
+- Menu opens as full-screen overlay or slide-in drawer
+
+---
+
+## SECTION 2: HERO
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    DECORATIVE BACKGROUND                        │
+│              (soft gradient with floating elements)             │
+│                                                                 │
+│                      HEADLINE (centered)                        │
+│                     SUBHEADLINE (centered)                      │
+│                                                                 │
+│                      [ CTA BUTTON ]                             │
+│                                                                 │
+│              ┌─────────────────────────┐                        │
+│              │   WHATSAPP MOCKUP       │                        │
+│              │   (phone with chat)     │                        │
+│              └─────────────────────────┘                        │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Background:
+- Gradient: from cream (#FDF6E3) at top to white at bottom
+- Floating decorative elements: soft cloud shapes, abstract patterns in pastel colors
+- Keep light and airy
+
+### Hero Content:
+Container: max-width 800px, centered, padding-top: 140px
+
+#### Headline:
+```
+Seu concierge pessoal de São Luís, direto no seu WhatsApp
+```
+- Font: Playfair Display, font-bold
+- Size: text-5xl (clamp 2.5rem to 3.5rem)
+- Color: gray-900
+- Text-align: center
+- Line-height: leading-tight
+- Margin-bottom: 24px
+
+#### Subheadline:
+```
+Pergunte onde ir, o que fazer, onde comer. Receba recomendações na hora e ainda ganhe descontos exclusivos nos melhores lugares da ilha.
+```
+- Font: Inter, font-normal
+- Size: text-lg to text-xl
+- Color: gray-600
+- Text-align: center
+- Max-width: 600px
+- Margin-bottom: 32px
+
+#### CTA Button:
+```
+Quero meu acesso!
+```
+- Background: primary red (#B91C1C)
+- Text: white, font-semibold, text-lg
+- Padding: 18px 36px
+- Border-radius: radius-full
+- Box-shadow: shadow-lg
+- Hover: darker red + translateY(-2px) + shadow-xl
+- Add WhatsApp icon (white) before text
+
+### WhatsApp Mockup (Phone):
+Build as a real React component, NOT an image.
+
+Position: Below CTA, centered
+Margin-top: 48px
+Max-width: 360px
+
+#### Phone Frame:
+- Background: white
+- Border-radius: 40px
+- Border: 10px solid gray-900
+- Box-shadow: shadow-2xl
+
+#### WhatsApp Chat Inside:
+
+**Header:**
+- Background: #075E54
+- Profile: Guia Slz logo or avatar
+- Name: "Guia Slz" in white, bold
+- Icons: call, video, menu (white)
+
+**Chat Body (bg: #ECE5DD, padding: 12px):**
+
+User bubble (right, green #DCF8C6):
+```
+Me indica um lugar pra jantar no Renascença?
+```
+
+Bot bubble (left, white):
+```
+Claro! 🍽️ Aqui vão 3 opções top:
+
+1. Cabana do Sol
+   ⭐ 4.8 · 💰 $$ · 🎫 10% OFF
+
+2. Churrascaria Fogo de Chão
+   ⭐ 4.6 · 💰 $$$ · 🎫 15% OFF
+
+3. Toca do Caranguejo
+   ⭐ 4.7 · 💰 $$ · 🎫 Bebida grátis
+
+Quer mais detalhes? 😊
+```
+
+Format with proper styling:
+- Restaurant names in bold
+- Discount badges highlighted with yellow background
+- Proper spacing between items
+
+**Input Bar:**
+- Emoji icon, text input, microphone icon
+
+### Animations:
+1. Headline fades up (0ms delay)
+2. Subheadline fades up (200ms)
+3. CTA fades up with scale (400ms)
+4. Phone mockup fades up (600ms)
+5. Phone has subtle floating animation (continuous)
+
+---
+
+## SECTION 3: SOCIAL PROOF BAR
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  Criado por @roleslz · 330k seguidores · 1000+ estabelecimentos │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Specifications:
+- Background: gray-50 or cream-light
+- Padding: 24px
+- Border-top and border-bottom: 1px solid gray-200
+
+### Content:
+```
+Criado por quem mapeia São Luís há 5 anos. @roleslz com 330 mil seguidores e mais de 1.000 estabelecimentos parceiros.
+```
+- Font: Inter, text-sm to text-base, font-medium
+- Color: gray-600
+- Text-align: center
+- Display as single line on desktop, can wrap on mobile
+
+### Optional Enhancement:
+- Add small Instagram icon before @roleslz
+- Animate numbers counting up on scroll
+
+---
+
+## SECTION 4: PRODUCT VS ALTERNATIVES (Comparison)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  ┌─────────────────────┐    ┌─────────────────────┐            │
+│  │  Sem o Guia         │    │  Com o Guia         │            │
+│  │  (problems list)    │    │  (benefits list)    │            │
+│  │  ❌ ❌ ❌ ❌          │    │  ✅ ✅ ✅ ✅          │            │
+│  └─────────────────────┘    └─────────────────────┘            │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Header:
+- No label needed, jump straight to cards
+- Background: white
+- Padding: section-padding-y
+
+### Layout:
+- Two cards side by side
+- Gap: 24px
+- Max-width: 900px, centered
+
+### Card 1: "Sem o Guia Inteligente"
+- Background: gray-50
+- Border: 1px solid gray-200
+- Border-radius: radius-2xl
+- Padding: 32px
+
+Title:
+```
+Sem o Guia Inteligente
+```
+- Font: Inter, font-bold, text-xl
+- Color: gray-900
+- Margin-bottom: 24px
+
+Items (with ❌ icon, red-400):
+```
+❌ Fica rolando o Instagram esperando aparecer algo bom
+❌ Pesquisa no Google e cai em resultado desatualizado
+❌ Manda mensagem pra vários amigos e fica esperando alguém responder
+❌ Paga preço cheio em tudo
+```
+- Font: text-base, gray-600
+- Line-height: relaxed
+- Gap between items: 16px
+- Icon: ❌ or X circle in red-400
+
+### Card 2: "Com o Guia Inteligente"
+- Background: primary-50 (#FEF2F2) or cream
+- Border: 2px solid primary red
+- Border-radius: radius-2xl
+- Padding: 32px
+- Optional: subtle glow/shadow with primary color
+
+Title:
+```
+Com o Guia Inteligente
+```
+- Font: Inter, font-bold, text-xl
+- Color: primary red
+- Margin-bottom: 24px
+
+Items (with ✅ icon, green-500):
+```
+✅ Pergunta o que quer e recebe resposta na hora
+✅ Recomendações atualizadas de quem conhece a ilha de verdade
+✅ Resposta em segundos, não em horas
+✅ Descontos exclusivos nos estabelecimentos parceiros
+```
+- Font: text-base, gray-700
+- Line-height: relaxed
+- Gap between items: 16px
+- Icon: ✅ or check circle in green-500
+
+### Responsive:
+- Mobile: Stack cards vertically
+
+---
+
+## SECTION 5: FEATURES & VALUE
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        SECTION LABEL                            │
+│                          "BENEFÍCIOS"                           │
+│                    HEADLINE (large, centered)                   │
+│                   SUBTITLE (centered, muted)                    │
+├─────────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐             │
+│  │   Card 1    │  │   Card 2    │  │   Card 3    │             │
+│  │  [Mockup]   │  │  [Mockup]   │  │  [Mockup]   │             │
+│  │   Title     │  │   Title     │  │   Title     │             │
+│  │   Desc      │  │   Desc      │  │   Desc      │             │
+│  └─────────────┘  └─────────────┘  └─────────────┘             │
+│              ┌─────────────┐                                    │
+│              │   Card 4    │                                    │
+│              └─────────────┘                                    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Header:
+
+Label:
+```
+BENEFÍCIOS
+```
+- Font: Inter, font-semibold, text-xs
+- Color: gray-500
+- Letter-spacing: 0.1em
+- Text-transform: uppercase
+- Text-align: center
+
+Headline:
+```
+Tudo que você precisa pra aproveitar São Luís
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Color: gray-900
+- Text-align: center
+- Margin-bottom: 16px
+
+Subtitle:
+```
+Recomendações personalizadas, descontos exclusivos e respostas em segundos.
+```
+- Font: Inter, text-base, gray-500
+- Text-align: center
+- Margin-bottom: 48px
+
+### Cards Grid:
+- 3 columns on desktop, 2 on tablet, 1 on mobile
+- Gap: 24px
+- 4th card centered below
+
+### Card Style:
+- Background: white
+- Border-radius: radius-2xl
+- Padding: 24px
+- Box-shadow: shadow-card
+- Border: 1px solid gray-100
+- Hover: translateY(-4px), shadow-card-hover
+
+### Feature Card 1: Descontos
+
+Title:
+```
+Descontos exclusivos pra quem usa o Guia
+```
+- Font: Playfair Display, font-semibold, text-lg
+- Color: gray-900
+
+Description:
+```
+Nossos estabelecimentos parceiros dão condições especiais só pra quem é assinante. A assinatura se paga no primeiro rolê!
+```
+- Font: Inter, text-sm, gray-500
+
+Mockup: WhatsApp message showing a restaurant recommendation with a "10% OFF - Exclusivo assinante" badge highlighted in yellow.
+
+### Feature Card 2: Personalização
+
+Title:
+```
+Recomendação sob medida pro seu dia
+```
+
+Description:
+```
+Fala o bairro, o quanto quer gastar, a ocasião, o horário. Ele entende tudo e te entrega exatamente o que você precisa.
+```
+
+Mockup: Mini WhatsApp conversation:
+- User: "Jantar romântico até R$150 no Renascença?"
+- Bot: "💑 Perfeito! Achei 3 opções especiais..."
+
+### Feature Card 3: Credibilidade
+
+Title:
+```
+5 anos mapeando São Luís
+```
+
+Description:
+```
+O Guia foi criado pelo time do @roleslz. São 330 mil seguidores, mais de 1.000 estabelecimentos visitados e 200 milhões de views.
+```
+
+Mockup: Stats display with:
+- @roleslz logo/text
+- "330k seguidores"
+- "1000+ locais"
+- "200M views"
+With checkmarks: "✓ Atualizado diariamente" "✓ Curadoria humana + IA"
+
+### Feature Card 4: Múltiplos Formatos (centered, wider)
+
+Title:
+```
+Manda áudio, texto ou vídeo
+```
+
+Description:
+```
+Tá dirigindo? Manda um áudio. Quer digitar? Digita. O Guia entende qualquer formato e te responde na hora.
+```
+
+Mockup: Show audio waveform message + text message + response
+
+---
+
+## SECTION 6: HOW IT WORKS
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     Headline (centered)                         │
+│                                                                 │
+│    [Icon]      [Icon]      [Icon]      [Icon]                  │
+│    Step 1      Step 2      Step 3      Step 4                  │
+│    Title       Title       Title       Title                   │
+│    Desc        Desc        Desc        Desc                    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: cream (#FDF6E3) or gray-50
+- Padding: section-padding-y
+
+### Headline:
+```
+Como funciona
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Color: gray-900
+- Text-align: center
+- Margin-bottom: 48px
+
+### Subtitle (italicized like reference):
+```
+Simples assim. Em menos de 2 minutos você já está usando.
+```
+- Font: Playfair Display, italic, text-lg
+- Color: gray-600
+- Text-align: center
+- Margin-bottom: 48px
+
+### Steps Layout:
+- 4 columns on desktop, 2x2 on tablet, 1 column on mobile
+- Gap: 32px
+- Align: center
+
+### Step Item Style:
+- Display: flex column, align-items center
+- Text-align: center
+
+Icon:
+- Size: 48px
+- Style: Line icons (outline style, like reference)
+- Color: gray-700
+- Margin-bottom: 16px
+
+Title:
+- Font: Inter, font-semibold, text-base
+- Color: gray-900
+- Margin-bottom: 8px
+
+Description:
+- Font: Inter, text-sm
+- Color: gray-500
+- Max-width: 200px
+
+### Step 1:
+- Icon: Credit card / payment icon
+- Title: "Faça sua assinatura"
+- Desc: "R$ 15 por mês. Cancela quando quiser, sem burocracia."
+
+### Step 2:
+- Icon: WhatsApp icon
+- Title: "Receba o acesso no WhatsApp"
+- Desc: "Em poucos segundos você já pode começar a usar."
+
+### Step 3:
+- Icon: Chat/message bubble icon
+- Title: "Pergunte o que quiser sobre a ilha"
+- Desc: "Restaurante, bar, evento, trânsito, praia, programa com criança..."
+
+### Step 4:
+- Icon: Discount tag / percentage icon
+- Title: "Aproveite com desconto"
+- Desc: "Use os benefícios exclusivos nos lugares parceiros."
+
+---
+
+## SECTION 7: EXAMPLE QUESTIONS
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        SECTION LABEL                            │
+│                          Headline                               │
+│                                                                 │
+│  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐              │
+│  │ Q1      │ │ Q2      │ │ Q3      │ │ Q4      │              │
+│  └─────────┘ └─────────┘ └─────────┘ └─────────┘              │
+│  ┌─────────┐ ┌─────────┐                                       │
+│  │ Q5      │ │ Q6      │                                       │
+│  └─────────┘ └─────────┘                                       │
+│                                                                 │
+│                     Closing statement                           │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Header:
+
+Label:
+```
+EXEMPLOS
+```
+- Same style as other labels
+
+Headline:
+```
+Veja o que você pode perguntar
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Text-align: center
+
+### Questions Grid:
+- 2 columns on desktop/tablet, 1 on mobile
+- Gap: 16px
+- Max-width: 800px, centered
+
+### Question Card Style:
+- Background: white
+- Border: 1px solid gray-200
+- Border-radius: radius-xl
+- Padding: 20px 24px
+- Display: flex, align-items: center
+- Gap: 12px
+
+Icon: 💬 or chat bubble
+- Size: 24px
+
+Text:
+- Font: Inter, text-base, gray-700
+
+Hover:
+- Border-color: primary red
+- Background: primary-50
+
+### Questions:
+1. "Me indica um samba ou um reggae acontecendo agora aqui em São Luís?"
+2. "Como está o trânsito agora na avenida Jerônimo de Albuquerque?"
+3. "Me indica um hamburger até 25 reais no Vinhais?"
+4. "Qual praia tem uma peixada com bom custo benefício?"
+5. "Me indica um restaurante com área kids?"
+6. "Uma pizza boa pelo Cohatrac?"
+
+### Closing Statement:
+```
+Você não precisa mais perder tempo pesquisando. Basta perguntar e ele vai te responder na hora!
+```
+- Font: Inter, text-lg, font-medium
+- Color: gray-600
+- Text-align: center
+- Margin-top: 32px
+
+---
+
+## SECTION 8: TESTIMONIALS
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    Headline (centered)                          │
+│                                                                 │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐                         │
+│  │ Card 1  │  │ Card 2  │  │ Card 3  │                         │
+│  │ (coral) │  │ (blue)  │  │ (yellow)│                         │
+│  └─────────┘  └─────────┘  └─────────┘                         │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: white
+- Padding: section-padding-y
+
+### Headline:
+```
+O que nossos assinantes dizem
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Text-align: center
+- Margin-bottom: 48px
+
+### Cards Layout:
+- 3 columns on desktop, 1 on mobile
+- Gap: 24px
+- Cards have colorful borders on top (like reference with colored card frames)
+
+### Card Style:
+- Background: white
+- Border-radius: radius-2xl
+- Padding: 0
+- Box-shadow: shadow-lg
+- Overflow: hidden
+
+Color bar (top):
+- Height: 8px
+- Full width
+- Card 1: Coral/red (#EF4444)
+- Card 2: Blue (#3B82F6)  
+- Card 3: Yellow/amber (#F59E0B)
+
+Content area:
+- Padding: 24px
+
+Quote:
+- Font: Inter, text-base, gray-700
+- Line-height: relaxed
+- Font-style: italic
+- Margin-bottom: 20px
+
+Attribution:
+- Display: flex, align-items: center
+- Gap: 12px
+
+Avatar:
+- Size: 40px
+- Border-radius: full
+- Background: gray-200 (or use initials)
+
+Name:
+- Font: Inter, font-semibold, text-sm, gray-900
+
+Role/location:
+- Font: Inter, text-xs, gray-500
+
+### Testimonial 1 (Coral):
+Quote:
+```
+"Perguntei onde tinha um reggae bom no sábado e em 10 segundos já tinha 3 opções com endereço e tudo. E ainda ganhei desconto na entrada!"
+```
+- Mariana, moradora do Calhau
+
+### Testimonial 2 (Blue):
+Quote:
+```
+"Eu usava o Google pra tudo e sempre caía em lugar fechado ou desatualizado. Agora só pergunto pro Guia. É como ter um amigo que conhece todos os cantos da cidade."
+```
+- Rafael, morador do Renascença
+
+### Testimonial 3 (Yellow):
+Quote:
+```
+"Minha esposa e eu queríamos um restaurante com área kids no Renascença. Em 1 minuto tínhamos a recomendação perfeita. Virou nosso lugar favorito."
+```
+- Pedro, pai de 2 filhos
+
+---
+
+## SECTION 9: WHO IT'S FOR
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Headline                                 │
+│                                                                 │
+│  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐              │
+│  │ Card 1  │ │ Card 2  │ │ Card 3  │ │ Card 4  │              │
+│  │ Icon    │ │ Icon    │ │ Icon    │ │ Icon    │              │
+│  │ Title   │ │ Title   │ │ Title   │ │ Title   │              │
+│  │ Desc    │ │ Desc    │ │ Desc    │ │ Desc    │              │
+│  └─────────┘ └─────────┘ └─────────┘ └─────────┘              │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Header:
+
+Label:
+```
+PRA QUEM É
+```
+
+Headline:
+```
+O Guia é perfeito pra você se...
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Text-align: center
+
+### Cards Grid:
+- 4 columns on desktop, 2 on tablet, 1 on mobile
+- Gap: 24px
+
+### Card Style:
+- Background: white
+- Border: 1px solid gray-200
+- Border-radius: radius-2xl
+- Padding: 24px
+- Text-align: center
+- Hover: border-color primary, shadow-md
+
+Icon:
+- Size: 48px
+- Margin-bottom: 16px
+- Style: Emoji or line icon
+
+Title:
+- Font: Inter, font-semibold, text-base
+- Color: gray-900
+- Margin-bottom: 8px
+
+Description:
+- Font: Inter, text-sm
+- Color: gray-500
+
+### Card 1:
+- Icon: 🧭 or compass
+- Title: "Quem gosta de explorar a cidade"
+- Desc: "Você curte descobrir lugares novos mas não tem tempo de ficar pesquisando. Quer recomendação boa e rápida."
+
+### Card 2:
+- Icon: 💑 or heart
+- Title: "O casal sem ideia"
+- Desc: "Toda sexta a mesma pergunta: 'onde a gente vai?'. Com o Guia, vocês decidem em 30 segundos."
+
+### Card 3:
+- Icon: 💰 or piggy bank
+- Title: "Quem quer economizar"
+- Desc: "Você já ia sair de qualquer jeito. Agora sai com desconto exclusivo e a assinatura se paga sozinha."
+
+### Card 4:
+- Icon: ✈️ or plane
+- Title: "Turista conhecendo a ilha"
+- Desc: "Primeira vez em São Luís? O Guia te mostra o que os locais sabem de verdade."
+
+---
+
+## SECTION 10: PRICING
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        SECTION LABEL                            │
+│                    HEADLINE (centered)                          │
+│                    SUBTITLE (centered)                          │
+│                                                                 │
+│  ┌────────────────────────────────────────────────────────┐    │
+│  │                    PRICING CARD                         │    │
+│  │                    (single plan)                        │    │
+│  │                                                         │    │
+│  │     R$ 15 /mês                                         │    │
+│  │                                                         │    │
+│  │     • Feature 1                                        │    │
+│  │     • Feature 2                                        │    │
+│  │     • Feature 3                                        │    │
+│  │                                                         │    │
+│  │     [ CTA BUTTON ]                                     │    │
+│  │                                                         │    │
+│  └────────────────────────────────────────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: gray-50 or cream
+- Padding: section-padding-y
+
+### Section Header:
+
+Label:
+```
+INVESTIMENTO
+```
+
+Headline:
+```
+Simples e acessível
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Text-align: center
+
+Subtitle:
+```
+E com os descontos exclusivos nos estabelecimentos parceiros, a assinatura se paga no primeiro rolê.
+```
+- Font: Inter, text-base, gray-600
+- Text-align: center
+- Max-width: 500px
+- Margin-bottom: 48px
+
+### Pricing Card:
+- Background: white (or dark #0F0F0F for premium look like reference)
+- Border-radius: radius-2xl
+- Padding: 40px
+- Box-shadow: shadow-xl
+- Max-width: 400px
+- Centered
+
+If using dark card:
+- Background: #0F0F0F
+- Text: white
+- Button: white background, dark text
+
+Price Display:
+```
+R$ 15
+```
+- Font: Playfair Display, font-bold, text-6xl
+- Color: primary red (or white if dark card)
+
+```
+/mês
+```
+- Font: Inter, text-lg, gray-500
+- Inline after price
+
+Features List:
+```
+✓ Recomendações ilimitadas
+✓ Descontos exclusivos em parceiros
+✓ Áudio, texto ou vídeo
+✓ Resposta em segundos
+✓ Cancele quando quiser
+```
+- Font: Inter, text-base
+- Color: gray-700 (or gray-300 if dark)
+- Check icon: green-500
+- Gap: 12px between items
+- Margin: 32px 0
+
+CTA Button:
+```
+Quero meu acesso!
+```
+- Background: primary red (#B91C1C)
+- Text: white, font-bold
+- Width: 100%
+- Padding: 16px
+- Border-radius: radius-full
+- Hover effects
+
+Subtext below button:
+```
+Parcele em até 12x no cartão
+```
+- Font: Inter, text-xs, gray-500
+- Text-align: center
+
+---
+
+## SECTION 11: ZERO RISK GUARANTEE
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│     🛡️  GARANTIA DE 7 DIAS                                     │
+│                                                                 │
+│     Headline                                                    │
+│     Description                                                 │
+│                                                                 │
+│     [ CTA BUTTON ]                                             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: primary red (#B91C1C) or gradient
+- Text: white
+- Padding: section-padding-y
+
+### Content:
+- Max-width: 700px
+- Centered
+- Text-align: center
+
+Icon/Badge:
+- Shield icon or guarantee badge
+- Size: 64px
+- Color: white or cream
+- Margin-bottom: 24px
+
+Headline:
+```
+Seu risco é zero
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Color: white
+
+Description:
+```
+Se você assinar, testar e em até 7 dias achar que não é pra você, devolvemos 100% do seu dinheiro na hora. Sem perguntas, sem burocracia. Simples assim!
+```
+- Font: Inter, text-lg
+- Color: white/cream (rgba(255,255,255,0.9))
+- Line-height: relaxed
+- Margin-bottom: 32px
+
+CTA Button:
+```
+Quero meu acesso!
+```
+- Background: white
+- Text: primary red, font-bold
+- Padding: 16px 32px
+- Border-radius: radius-full
+- Hover: cream background
+
+---
+
+## SECTION 12: ABOUT THE CREATOR
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│  ┌──────────┐                                                   │
+│  │  Photo   │   SECTION LABEL                                  │
+│  │          │   Headline: João Lima                            │
+│  │          │                                                   │
+│  └──────────┘   Bio text paragraph                             │
+│                                                                 │
+│                 [ CTA BUTTON ]                                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: white
+- Padding: section-padding-y
+
+### Layout:
+- Two columns on desktop: Photo left, content right
+- Single column on mobile: Photo top, content below
+- Max-width: 900px
+- Gap: 48px
+- Align: center
+
+### Photo:
+- Placeholder or actual photo
+- Size: 280px x 280px
+- Border-radius: radius-2xl
+- Box-shadow: shadow-lg
+- Object-fit: cover
+
+### Content:
+
+Label:
+```
+CONHEÇA O CRIADOR
+```
+
+Headline:
+```
+João Lima
+```
+- Font: Playfair Display, font-bold, text-3xl
+- Color: gray-900
+- Margin-bottom: 16px
+
+Bio:
+```
+Especialista em criação de conteúdo para o Instagram há mais de 5 anos. Fundador da página Rolê São Luís (@roleslz) que conta com mais de 330 mil seguidores e uma média de 5 milhões de impressões todos os meses. Já atendeu mais de 1000 empresas e atingiu mais de 200 milhões de views ao longo de todos esses anos.
+
+Através do seu trabalho, ele ajuda empresários a faturarem mais e o público a ter experiências memoráveis na cidade.
+
+E agora, através do Guia Inteligente, ele quer facilitar a vida de quem mora em São Luís e dos turistas que visitam a nossa cidade. Tudo em tempo real, com respostas precisas e automáticas, direto no seu WhatsApp.
+```
+- Font: Inter, text-base
+- Color: gray-600
+- Line-height: relaxed
+- Margin-bottom: 24px
+
+CTA Button:
+```
+Quero meu acesso!
+```
+- Same style as other CTAs
+
+---
+
+## SECTION 13: FAQ
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        HEADLINE                                 │
+│                                                                 │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │ Question 1                                          [+]  │   │
+│  ├─────────────────────────────────────────────────────────┤   │
+│  │ Question 2                                          [+]  │   │
+│  ├─────────────────────────────────────────────────────────┤   │
+│  │ Question 3                                          [+]  │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: gray-50
+- Padding: section-padding-y
+
+### Headline:
+```
+Perguntas frequentes
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Text-align: center
+- Margin-bottom: 48px
+
+### FAQ Container:
+- Max-width: 700px
+- Centered
+
+### Accordion Item Style:
+- Background: white
+- Border: 1px solid gray-200
+- Border-radius: radius-lg (first and last items get rounded corners)
+- Items stack with -1px margin to share borders
+
+Question row:
+- Padding: 20px 24px
+- Display: flex, justify-between, align-items: center
+- Cursor: pointer
+
+Question text:
+- Font: Inter, font-medium, text-base
+- Color: gray-900
+
+Toggle icon:
+- Plus/minus or chevron
+- Size: 20px
+- Color: gray-400
+- Rotation animation on open
+
+Answer (when expanded):
+- Padding: 0 24px 20px 24px
+- Font: Inter, text-base
+- Color: gray-600
+- Line-height: relaxed
+- Animate height and opacity
+
+### FAQ Items:
+
+**Q: Quanto custa?**
+A: R$ 15 por mês. Menos que um açaí. E com os descontos exclusivos, a assinatura se paga no primeiro rolê.
+
+**Q: Como funciona o acesso?**
+A: Depois do pagamento, você recebe um link no e-mail pra adicionar o Guia no seu WhatsApp. Leva menos de 1 minuto pra começar a usar.
+
+**Q: Preciso baixar algum aplicativo?**
+A: Não. Funciona direto no WhatsApp que você já usa todo dia.
+
+**Q: E se eu não gostar?**
+A: Você tem 7 dias pra testar. Se não curtir, é só pedir reembolso que devolvemos 100% do valor. Sem perguntas, sem burocracia.
+
+**Q: Posso perguntar qualquer coisa sobre São Luís?**
+A: Sim! Restaurantes, bares, eventos, trânsito, praias, programas com crianças, lugares pra trabalhar remoto... O Guia foi treinado pra responder tudo sobre a cidade.
+
+**Q: Funciona mesmo se eu não entendo nada de tecnologia?**
+A: Com certeza. Se você sabe mandar mensagem no WhatsApp, você sabe usar o Guia. É só perguntar. Até criança consegue usar!
+
+**Q: A plataforma de pagamento é segura?**
+A: Sim. Usamos a Kiwify, que é 100% segura e usada por milhares de produtos digitais no Brasil.
+
+**Q: Posso parcelar?**
+A: Sim! Você consegue parcelar em até 12x no cartão de crédito.
+
+---
+
+## SECTION 14: FINAL CTA
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│                    HEADLINE                                     │
+│                    SUBTITLE                                     │
+│                                                                 │
+│                    [ CTA BUTTON ]                              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Section Background:
+- Background: dark (#0F0F0F)
+- Padding: 80px top/bottom
+- Text-align: center
+
+### Content:
+
+Headline:
+```
+Pronto pra conhecer São Luís de verdade?
+```
+- Font: Playfair Display, font-bold, text-4xl
+- Color: white
+
+Subtitle:
+```
+Comece agora. Sem compromisso, sem burocracia.
+```
+- Font: Inter, text-lg
+- Color: gray-400
+- Margin: 16px 0 32px 0
+
+CTA Button:
+```
+Quero meu acesso!
+```
+- Background: primary red
+- Text: white, font-bold
+- Padding: 18px 40px
+- Border-radius: radius-full
+- Hover: lighter red
+
+App store badges (optional):
+- Display: flex, justify-content: center, gap: 16px
+- Show Kiwify secure payment badge
+
+---
+
+## SECTION 15: FOOTER
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│  [Logo]                                                         │
+│                                                                 │
+│  LINKS           SUPORTE         REDES                         │
+│  Como funciona   FAQ             Instagram                     │
+│  Preços          Contato                                       │
+│                                                                 │
+│  ─────────────────────────────────────────────────────────────  │
+│                                                                 │
+│  © 2024 Guia Slz · Pagamento seguro via Kiwify                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Footer Background:
+- Background: #0F0F0F (near black)
+- Padding: 64px top, 32px bottom
+- Color: white
+
+### Layout:
+- Container: max-width 1200px, centered
+
+### Top Section:
+
+Logo:
+- Guia Slz logo (light version or white)
+- Height: 48px
+- Margin-bottom: 48px
+
+Links Grid:
+- 3-4 columns on desktop
+- Gap: 48px
+
+Column Title:
+- Font: Inter, font-semibold, text-sm
+- Color: gray-400
+- Text-transform: uppercase
+- Letter-spacing: 0.05em
+- Margin-bottom: 16px
+
+Links:
+- Font: Inter, text-sm
+- Color: gray-300
+- Hover: white
+- Line-height: 2
+
+### Links Content:
+
+**Column 1 - PRODUTO:**
+- Como funciona
+- Benefícios
+- Preços
+
+**Column 2 - SUPORTE:**
+- FAQ
+- Contato
+
+**Column 3 - REDES:**
+- Instagram (@roleslz)
+- Link to Instagram
+
+### Divider:
+- Border-top: 1px solid gray-800
+- Margin: 48px 0 24px 0
+
+### Bottom Section:
+- Display: flex, justify-between, align-items: center
+- Flex-wrap: wrap on mobile
+
+Copyright:
+```
+© 2024 Guia Inteligente de São Luís
+```
+- Font: Inter, text-sm
+- Color: gray-500
+
+Payment badge:
+```
+Pagamento seguro via Kiwify
+```
+- Font: Inter, text-sm
+- Color: gray-500
+- Optional: Kiwify logo or lock icon
+
+Social Icons:
+- Instagram icon
+- Size: 20px
+- Color: gray-400
+- Hover: white
+
+---
+
+## PART 3: GLOBAL ANIMATIONS
+
+### Scroll Animations (Intersection Observer):
+- Trigger when element is 20% visible
+- Only animate once (no repeat)
+
+**Fade Up:**
+```css
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+```
+
+**Stagger Children:**
+- Apply increasing delays to child elements
+- 100ms increment per child
+
+### Hover Animations:
+- Buttons: translateY(-2px), shadow increase
+- Cards: translateY(-4px), shadow increase
+- Links: color change
+- All transitions: 200-300ms ease
+
+### Special Animations:
+- Hero phone: Subtle floating (translateY oscillation, 3s infinite)
+- Decorative elements: Slow parallax on scroll (optional)
+- FAQ accordion: Height and opacity transition
+
+---
+
+## PART 4: RESPONSIVE BREAKPOINTS
+
+```css
+/* Mobile first approach */
+
+/* Small (default): < 640px */
+/* Medium: >= 640px */
+@media (min-width: 640px) { }
+
+/* Large: >= 768px */
+@media (min-width: 768px) { }
+
+/* XL: >= 1024px */
+@media (min-width: 1024px) { }
+
+/* 2XL: >= 1280px */
+@media (min-width: 1280px) { }
+```
+
+### Key Responsive Changes:
+
+**Mobile (< 768px):**
+- Single column layouts
+- Hamburger menu
+- Smaller headings (use clamp values)
+- Full-width buttons
+- Stacked cards
+- Reduced padding
+
+**Tablet (768px - 1023px):**
+- 2-column grids where applicable
+- Medium-sized headings
+
+**Desktop (1024px+):**
+- Full layouts as designed
+- Multi-column grids
+- Larger headings and spacing
+
+---
+
+## PART 5: TECHNICAL REQUIREMENTS
+
+1. **Framework:** React with functional components and hooks
+2. **Styling:** Tailwind CSS (core utility classes only)
+3. **Fonts:** Import 'Playfair Display' and 'Inter' from Google Fonts
+4. **Icons:** Use Lucide React or similar icon library
+5. **Animations:** CSS transitions + Intersection Observer (or Framer Motion)
+6. **Accessibility:** 
+   - Proper heading hierarchy (h1 > h2 > h3)
+   - Alt text for images
+   - Aria labels for interactive elements
+   - Focus states for keyboard navigation
+7. **Performance:**
+   - Lazy load images below fold
+   - Optimize for Core Web Vitals
+   - No layout shift
+8. **All UI mockups must be real DOM elements, NOT images**
+
+---
+
+## PART 6: ASSETS NEEDED
+
+1. **Logo:** Guia Slz logo (provided - speech bubble design in red/cream)
+2. **Creator Photo:** Photo of João Lima (placeholder or actual)
+3. **Icons:** Line-style icons for How It Works section
+4. **WhatsApp elements:** Build as components, not images
+
+---
+
+## SUMMARY
+
+This is a complete landing page for Guia Slz with:
+- ✅ 15 sections total
+- ✅ Brand colors (red #B91C1C + cream #FDF6E3)
+- ✅ All copy in Brazilian Portuguese
+- ✅ Responsive design
+- ✅ Animations and interactions
+- ✅ Accessibility considerations
+
+Build each section in order, ensuring visual consistency throughout.
