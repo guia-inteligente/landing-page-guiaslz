@@ -1,6 +1,87 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Gill Sans Font Family */
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/Gill Sans Heavy Italic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -65,10 +146,10 @@
   --color-warning: hsl(var(--warning));
   --color-discount: hsl(var(--discount));
 
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Gill Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Gill Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Gill Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Gill Sans', Georgia, serif;
   --font-mono: Menlo, monospace;
 
   --text-xs: 0.75rem;

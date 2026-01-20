@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Video, MoreVertical, ChevronLeft, Smile, Paperclip, Mic, Instagram, Check, X as XIcon } from 'lucide-react';
 import logoGuia from '@assets/logo-roleslz-render.png';
+import iconFirewall from '@assets/icon-firewall.png';
+import iconSecurityPayment from '@assets/icon-security-payment.png';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -773,7 +775,7 @@ export default function Home() {
         <div className="max-w-[700px] mx-auto px-6 text-center">
           {/* Shield Icon */}
           <div className="mb-6">
-            <span className="text-6xl">🛡️</span>
+            <img src={iconFirewall} alt="Garantia" className="w-16 h-16 mx-auto" />
           </div>
 
           <h2
@@ -912,7 +914,8 @@ export default function Home() {
           </button>
 
           <p className="text-gray-500 text-sm mt-5 flex items-center justify-center gap-2">
-            🔒 Pagamento seguro via Kiwify
+            <img src={iconSecurityPayment} alt="Seguro" className="w-4 h-4" />
+            Pagamento seguro via Kiwify
           </p>
         </div>
       </section>
