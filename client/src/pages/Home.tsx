@@ -99,6 +99,11 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-[800px] mx-auto px-6 text-center">
+          {/* Eyebrow */}
+          <p className="text-sm uppercase tracking-widest text-primary mb-4 font-medium animate-in fade-in slide-in-from-bottom-4 duration-500">
+            Guia Inteligente de São Luís
+          </p>
+
           {/* Headline */}
           <h1
             className="font-bold text-gray-900 leading-tight tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700"
@@ -110,7 +115,7 @@ export default function Home() {
             }}
             data-testid="text-headline"
           >
-            Seu concierge pessoal de São Luís, direto no seu WhatsApp
+            Seu concierge pessoal da ilha, direto no seu WhatsApp
           </h1>
 
           {/* Subheadline */}
@@ -297,7 +302,7 @@ export default function Home() {
               </h3>
               <div className="space-y-4">
                 {[
-                  'Pergunta o que quer e recebe resposta na hora',
+                  'Pergunta sobre a ilha e recebe resposta na hora',
                   'Recomendações atualizadas de quem conhece a ilha de verdade',
                   'Resposta em segundos, não em horas',
                   'Descontos exclusivos nos estabelecimentos parceiros'
@@ -339,10 +344,10 @@ export default function Home() {
             {/* Card 1: Descontos */}
             <div className="bg-white rounded-3xl p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 min-h-[340px] hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-300">
               <h3 className="font-semibold text-gray-900 text-lg mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                Descontos exclusivos pra quem usa o Guia
+                Promoções exclusivas de 10% até 50% off
               </h3>
               <p className="text-gray-500 text-sm mb-5">
-                Nossos estabelecimentos parceiros dão condições especiais só pra quem é assinante. A assinatura se paga no primeiro rolê!
+                Todo dia tem promo do dia em restaurantes parceiros. Só quem é assinante recebe. A assinatura se paga em 3 rolês!
               </p>
 
               {/* Mockup */}
