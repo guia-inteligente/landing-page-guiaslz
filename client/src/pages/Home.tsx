@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Video, MoreVertical, ChevronLeft, Smile, Paperclip, Mic, Instagram, Check, X as XIcon } from 'lucide-react';
-import logoGuia from '@assets/logo-guia_1768265666789.png';
+import logoGuia from '@assets/logo-roleslz-render.png';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
