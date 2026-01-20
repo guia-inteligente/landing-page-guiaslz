@@ -775,7 +775,7 @@ export default function Home() {
         <div className="max-w-[700px] mx-auto px-6 text-center">
           {/* Shield Icon */}
           <div className="mb-6">
-            <img src={iconFirewall} alt="Garantia" className="w-16 h-16 mx-auto" />
+            <img src={iconFirewall} alt="Garantia" className="w-24 h-24 mx-auto" />
           </div>
 
           <h2
