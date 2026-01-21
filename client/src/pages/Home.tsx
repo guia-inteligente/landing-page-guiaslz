@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex items-center">
             <img 
               src={logoGuia} 
-              alt="Guia Slz - Seu concierge de São Luís" 
+              alt="Guia Slz - Seu guia de São Luís" 
               className="h-10 w-auto"
               data-testid="logo"
             />
@@ -115,7 +115,7 @@ export default function Home() {
             }}
             data-testid="text-headline"
           >
-            Seu concierge pessoal da ilha, direto no seu WhatsApp
+            Seu guia pessoal da ilha, direto no seu WhatsApp
           </h1>
 
           {/* Subheadline */}
